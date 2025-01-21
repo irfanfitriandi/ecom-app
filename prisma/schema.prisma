@@ -9,11 +9,12 @@ generator client {
 }
 
 model Product {
-  id       Int     @id @default(autoincrement())
-  name     String
-  price    Float
-  in_stock Boolean
-  orders   Order[] @relation("ProductOrders")
+  id             Int      @id @default(autoincrement())
+  name           String
+  price          Float
+  in_stock       Boolean
+  stock_quantity Float
+  orders         Order[]  @relation("ProductOrders")
 }
 
 model Order {

@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "tsx --watch src/server.ts",
+    "seed": "tsx prisma/seed.ts",
     "build": "tsup --config build.ts",
     "clean": "rm -r dist",
     "test": "vitest",

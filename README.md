@@ -111,7 +111,7 @@ pnpm dev
 ### API Endpoints
 
 - `GET /products`: Fetch paginated list of products
-- `POST /orders`: Create a new order
+- `POST /order`: Create a new order
 
 ### Testing
 
