@@ -85,7 +85,7 @@ The API is designed to handle product listings and order creation. It utilizes a
    Create a `.env` file in the root directory and add the following:
    ```
    DATABASE_URL="postgresql://ecomapp:ecomapp123@localhost:5432/mydb?schema=public"
-   PORT=3000
+   PORT=8080
    ```
 
 5. Run database migrations:
@@ -144,12 +144,12 @@ To build and run the e-commerce API using Docker, follow these steps:
 
 2. Run the Docker container:
    ```
-   docker run --env-file .env -p 3000:3000 ecom-api
+   docker run --env-file .env -p 8080:8080 ecom-api
    ```
 
 This command does the following:
 - Uses the `.env` file for environment variables
-- Maps port 3000 of the container to port 3000 on your host machine
+- Maps port 8080 of the container to port 8080 on your host machine
 - Uses the `ecom-api` image we built in step 1
 
 Make sure your `.env` file is properly configured before running the Docker container.
@@ -171,16 +171,6 @@ Make sure your `.env` file is properly configured before running the Docker cont
      3. Verify that environment variables are set correctly
      4. Run tests in isolation: `pnpm test <test-file-name>`
 
-### Debugging
-
-To enable debug mode, set the `DEBUG` environment variable:
-
-```
-DEBUG=app:* pnpm start
-```
-
-Log files are located in the `logs/` directory (ensure this directory exists).
-
 ## Data Flow
 
 The application follows this general data flow for handling requests:
@@ -194,10 +184,6 @@ The application follows this general data flow for handling requests:
 ```
 Client -> Express Router -> Controller -> Service -> Database -> Service -> Controller -> Client
 ```
-
-## Deployment
-
-Deployment instructions are not provided in the current project structure.
 
 ## Infrastructure
 
