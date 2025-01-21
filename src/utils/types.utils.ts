@@ -2,11 +2,12 @@ export interface Product {
   id: number
   name: string
   price: number
-  inStock: boolean
+  in_stock: boolean
+  stock_quantity: number
 }
 
 export interface OrderRequestBody {
-  productId: number
+  product_id: number
   quantity: number
 }
 
