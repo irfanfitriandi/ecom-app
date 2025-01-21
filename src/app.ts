@@ -1,6 +1,8 @@
 import express from 'express'
+
 import { errorHandler } from './middlewares/error.middlewares'
 import { requestLogger } from './middlewares/log.middlewares'
+
 import orderRoutes from './routes/order.routes'
 import productRoutes from './routes/product.routes'
 
@@ -11,6 +13,9 @@ app.use(express.json())
 app.use(requestLogger)
 
 // Routes
+app.get('/', (_, res) => {
+  res.send('Hello World!')
+})
 app.use('/products', productRoutes)
 app.use('/order', orderRoutes)
 
